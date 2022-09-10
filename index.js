@@ -9,13 +9,13 @@ const maxSize = 2048;
 
 const options = {
 	overwrite: true,
-	filter: [
-        '**/*.jpg',
-        '**/*.jpeg'
-    ],
     transform: function (src, dest, stats) {
         const isJPEG = src.indexOf('.jpeg') > 0;
         const isJPG = !isJPEG && src.indexOf('.jpg') > 0;
+
+        if (!isJPEG && !isJPG) {
+            return null;
+        }
 
         const { width, height } = imageSize(src);
 
