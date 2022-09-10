@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/dloskutov/image-comression#readme",
   "dependencies": {
-    "recursive-copy": "^2.0.14"
+    "image-size": "^1.0.2",
+    "recursive-copy": "^2.0.14",
+    "sharp": "^0.31.0"
   }
 }

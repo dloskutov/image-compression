@@ -1,17 +1,25 @@
 const copy = require('recursive-copy');
 const path = require('path');
+const sharp = require('sharp');
+const imageSize = require('image-size');
 
 const inputDir = path.join(__dirname, './input');
 const outputDir = path.join(__dirname, './output');
+const maxSize = 2048;
 
 const options = {
 	overwrite: true,
-	expand: true,
-	dot: true,
 	filter: [
         '**/*.jpg',
         '**/*.jpeg'
     ],
+    transform: function (src, dest, stats) {
+        const { width, height } = imageSize(src);
+        if (width > maxSize || height > maxSize) {
+            return sharp().resize(maxSize)
+        }
+        return null;
+    }
 };
 
 copy(inputDir, outputDir, options)
