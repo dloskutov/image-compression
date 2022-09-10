@@ -14,11 +14,30 @@ const options = {
         '**/*.jpeg'
     ],
     transform: function (src, dest, stats) {
+        const isJPEG = src.indexOf('.jpeg') > 0;
+        const isJPG = !isJPEG && src.indexOf('.jpg') > 0;
+
         const { width, height } = imageSize(src);
+
+        let stream = sharp();
         if (width > maxSize || height > maxSize) {
-            return sharp().resize(maxSize)
+            stream = stream.resize(maxSize);
         }
-        return null;
+
+        if (isJPEG) {
+            stream = stream.toFormat('jpeg', {
+                quality: 95,
+                mozjpeg: true
+            });
+        }
+        if (isJPG) {
+            stream = stream.toFormat('jpg', {
+                quality: 95,
+                mozjpeg: true
+            })
+        }
+
+        return stream;
     }
 };
 
