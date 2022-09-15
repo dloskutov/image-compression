@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dloskutov/image-comression.git"
+    "url": "git+https://github.com/dloskutov/image-compression.git"
   },
   "author": "Dmitriy Loskutov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dloskutov/image-comression/issues"
+    "url": "https://github.com/dloskutov/image-compression/issues"
   },
-  "homepage": "https://github.com/dloskutov/image-comression#readme",
+  "homepage": "https://github.com/dloskutov/image-compression#readme",
   "dependencies": {
     "image-size": "^1.0.2",
     "recursive-copy": "^2.0.14",
