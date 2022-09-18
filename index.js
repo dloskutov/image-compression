@@ -22,6 +22,8 @@ const options = {
         let stream = sharp();
         if (width > maxSize || height > maxSize) {
             stream = stream.resize(maxSize);
+        } else {
+            return null;
         }
 
         if (isJPEG) {
