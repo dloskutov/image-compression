@@ -3,8 +3,8 @@ const path = require('path');
 const sharp = require('sharp');
 const imageSize = require('image-size');
 
-const inputDir = path.join('/Users/dmitriy/Yandex.Disk.localized');
-const outputDir = path.join('/Users/dmitriy/copy_output');
+const inputDir = path.join('/input');
+const outputDir = path.join('/output');
 const maxSize = 1600;
 
 const options = {
