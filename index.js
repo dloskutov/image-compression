@@ -3,15 +3,15 @@ const path = require('path');
 const sharp = require('sharp');
 const imageSize = require('image-size');
 
-const inputDir = path.join(__dirname, './input');
-const outputDir = path.join(__dirname, './output');
-const maxSize = 2048;
+const inputDir = path.join('/Users/dmitriy/Yandex.Disk.localized');
+const outputDir = path.join('/Users/dmitriy/copy_output');
+const maxSize = 1600;
 
 const options = {
 	overwrite: true,
     transform: function (src, dest, stats) {
-        const isJPEG = src.indexOf('.jpeg') > 0;
-        const isJPG = !isJPEG && src.indexOf('.jpg') > 0;
+        const isJPEG = src.toLowerCase().indexOf('.jpeg') > 0;
+        const isJPG = !isJPEG && src.toLowerCase().indexOf('.jpg') > 0;
 
         if (!isJPEG && !isJPG) {
             return null;
