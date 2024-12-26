@@ -1,7 +1,7 @@
 {
   "name": "image-compression",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Project to help compress and resize images recursively",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/dloskutov/image-compression#readme",
   "dependencies": {
-    "image-size": "^1.0.2",
+    "image-size": "^1.2.0",
     "recursive-copy": "^2.0.14",
-    "sharp": "^0.31.0"
+    "sharp": "^0.33.5"
   }
 }

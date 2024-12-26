@@ -2,10 +2,16 @@ const copy = require('recursive-copy');
 const path = require('path');
 const sharp = require('sharp');
 const imageSize = require('image-size');
+const { exit } = require('process');
 
-const inputDir = path.join('/input');
-const outputDir = path.join('/output');
-const maxSize = 1600;
+const inputDir = process.env.INPUT_DIR;
+const outputDir = process.env.OUTPUT_DIR;
+const maxSize = parseInt(process.env.MAX_IMAGE_SIZE, 10) || 1600;
+
+if (!inputDir || !outputDir) {
+    console.log("use INPUT_DIR and OUTPUT_DIR to set up input/output dir");
+    exit(0);
+}
 
 const options = {
 	overwrite: true,
