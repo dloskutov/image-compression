@@ -6,7 +6,7 @@ const { exit } = require('process');
 
 const inputDir = process.env.INPUT_DIR;
 const outputDir = process.env.OUTPUT_DIR;
-const maxSize = parseInt(process.env.MAX_IMAGE_SIZE, 10) || 1600;
+const maxSize = parseInt(process.env.MAX_IMAGE_SIZE, 10) || 2048;
 
 if (!inputDir || !outputDir) {
     console.log("use INPUT_DIR and OUTPUT_DIR to set up input/output dir");
